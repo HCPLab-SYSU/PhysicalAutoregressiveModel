@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="This work transfers world knowledge from video pretraining to physical token autoregression, which progressively models the evolution of frame and action.">
+  <meta property="og:title" content="Physical Autoregressive Model for Robotic Manipulation without Action Pretraining"/>
+  <meta property="og:description" content="This work transfers world knowledge from video pretraining to physical token autoregression, which progressively models the evolution of frame and action."/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/hcp_logo.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="Physical Autoregressive Model for Robotic Manipulation without Action Pretraining">
+  <meta name="twitter:description" content="This work transfers world knowledge from video pretraining to physical token autoregression, which progressively models the evolution of frame and action.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/hcp_logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="robotic manipulation, autoregressive model, imitation learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Physical Autoregressive Model for Robotic Manipulation without Action Pretraining</title>
+  <link rel="icon" type="image/x-icon" href="static/images/hcp_logo.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Physical Autoregressive Model for Robotic Manipulation without Action Pretraining</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                Zijian Song<sup>1</sup>,</span>
+                <span class="author-block">
+                  Sihan Qin<sup>1</sup>,</span>
+                  <span class="author-block">
+                    Tianshui Chen<sup>4,5</sup>,</span>
+                    <span class="author-block">
+                      Liang Lin<sup>1,2,3,4</sup>,</span>
+                      <span class="author-block">
+                        Guangrun Wang<sup>1,2,4*</sup>,</span>
+                  </span>
+                  </div>
+
+                  <div class="is-size-6 publication-authors">
+                    <span class="author-block">
+                      <sup>1</sup>Sun Yat-sen University&nbsp;&nbsp;&nbsp;&nbsp;
+                      <sup>2</sup>Guangdong Key Laboratory of Big Data Analysis and Processing<br>
+                      <sup>3</sup>Peng Cheng Laboratory&nbsp;&nbsp;&nbsp;&nbsp;
+                      <sup>4</sup>X-Era AI Lab&nbsp;&nbsp;&nbsp;&nbsp;
+                      <sup>5</sup>Guangdong University of Technology</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>corresponding author</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2508.09822.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2508.09822" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="item" style="display: flex; flex-direction: column; align-items: center;">
+        <!-- 图片保持原有样式 -->
+        <img src="static/images/world_envolve.svg" alt="image" style="width: 60%; margin: 0 auto; display: block;"/>
+        <!-- 图注使用与图片相同的宽度，并左对齐 -->
+        <h2 class="subtitle" style="width: 60%; text-align: left; margin: 0; padding-top: 0.5rem; font-size: 0.9rem;">
+          <strong>The illustration of Physical Autoregression.</strong> Our autoregressive process operates over a sequence of physical tokens (marked by red), each combining the visual world state (marked by orange) and the embodiment state (marked by black). The autoregressive process runs in sync with the environment: at each step, the predicted token is decoded into an image and an action, which interact with the environment to update its state (marked by blue), while the resulting observations and proprios are encoded back into the context.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The scarcity of manipulation data has motivated the use of pretrained large models from other modalities in robotics. In this work, we build upon autoregressive video generation models to propose a Physical Autoregressive Model (PAR), where physical tokens combine frames and actions to represent the joint evolution of the robot and its environment. PAR leverages the world knowledge embedded in video pretraining to understand physical dynamics without requiring action pretraining, enabling accurate video prediction and consistent action trajectories. It also adopts a DiT-based de-tokenizer to model frames and actions as continuous tokens, mitigating quantization errors and facilitating mutual enhancement. Furthermore, we incorporate a causal mask with inverse kinematics, parallel training, and the KV-cache mechanism to further improve performance and efficiency. Experiments on the ManiSkill benchmark show that PAR achieves a 100% success rate on the PushCube task, matches the performance of action-pretrained baselines on other tasks, and accurately predicts future videos with tightly aligned action trajectories. These findings underscore a promising direction for robotic manipulation by transferring world knowledge from autoregressive video pretraining.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="item">
+        <!-- replace your image path -->
+        <img src="static/images/phytransformers.svg" alt="image" style="width: 70%; margin: 0 auto; display: block;"/>
+        <h2 class="subtitle" style="text-align: left;">
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End single image display -->
+
+
+
+
+<section class="section" id="Method">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Method</h2>
+    <p>The autoregressive nature provides an ideal foundation for representing the physical world.
+      Based on this insight, this work presents the <strong>Physical Autoregressive Model, PAR</strong>.
+      Specifically, the frame tokens and the action tokens are combined into physical tokens, which effectively represent the joint evolution of robotic manipulation and environmental feedback.
+      To mitigate the scarcity of human demonstrations, we transfer world knowledge from video pretraining (NOVA, Deng et.al 2024) into our PAR model, facilitating a seamless transition from understanding visual dynamics to capturing physical dynamics.</p>
+    <p>Most existing methods rely on discrete token representations to represent visual signals and action signals.
+      This may introduce resolution errors whose accumulation propagates through long-horizon prediction and produces substantial trajectory drift. In this work, we propose to represent both frame and action as continuous signals. Specifically, we leverage the Diffusion-Transformer model (DiT) coupled with Diffusion Loss training objective to model the arbitrary distribution of the continuous frame and action tokens. This design not only improves smoothness and coherence, but also facilitates a deeper mutual interaction between the continuous spaces of vision and action.</p>
+  </div>
+</section>
+
+
+<section class="section" id="Experiment">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Experiment</h2>
+    <p>We use the ManiSkill Benchmark and follow prior works by evaluating the single task scenarios. We specifically focus on three manipulation tasks: PushCube, PickCube, and StackCube. We render 1K demonstrates for each task as training data. Our method achieves the second-best success rate, surprising the ICRT (Fu et.al 2025), only behind RDT (Liu et.al 2024). It is worth noting that RDT require extensive action pretraining, while our method does not.</p>
+    <p>The ablation study compares PAR-Full against two ablated variants: (1) PAR-NoAR, which removes the autoregressive architecture. (1) PAR-Discrete, which replaces the generative de-tokenizer with a discriminative one. PAR-Full consistently outperforms both baselines by a large margin, confirming the effectiveness of our designs.</p>
+  </div>
+</section>
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="item">
+        <!-- replace your image path -->
+        <img src="static/images/exp_1.png" alt="image" style="width: 30%; margin: 0 auto; display: block;"/>
+        <h2 class="subtitle" style="text-align: left;">
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End single image display -->
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="item">
+        <!-- replace your image path -->
+        <img src="static/images/exp_2.png" alt="image" style="width: 30%; margin: 0 auto; display: block;"/>
+        <h2 class="subtitle" style="text-align: left;">
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End single image display -->
+
+
+
+<section class="section" id="Visualization">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Visualization</h2>
+    <p>We visualize the predicted video sequences alongside the corresponding execution videos. The results reveal a clear alignment between the predicted visual trajectories and actual robot actions. This consistency highlights not only the model’s fine-grained scene understanding from video pretraining, but also its effectiveness in transferring that understanding into action planning.</p>
+  </div>
+</section>
+
+
+
+<style>
+  .video-grid-container {
+      width: 50%;
+      margin: 0 auto;
+      padding: 1rem;
+  }
+  
+  .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 1行2列布局 */
+      gap: 1rem;
+      width: 100%;
+      margin-bottom: 1rem;
+  }
+  
+  .video-container {
+      width: 100%;
+      max-width: 90%; /* 适应2列布局的宽度 */
+  }
+  
+  video {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+  }
+  
+  .video-description {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #333;
+  }
+  
+  @media (max-width: 768px) {
+      .video-grid {
+          grid-template-columns: 1fr; /* 移动端单列布局 */
+      }
+      .video-container {
+          max-width: 100%;
+      }
+  }
+</style>
+
+<div class="video-grid-container">
+  <div class="video-grid">
+      <!-- 第一列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PickCube_prediction_000.mp4" type="video/mp4">
+          </video>
+      </div>
+      
+      <!-- 第二列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PickCube_simulation_000.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  
+  <!-- 视频下方的统一说明文字 -->
+  <div class="video-description">
+    The visualization of <strong>PickCube</strong> task. Left side shows the video generation result from PAR's frame tokens. Right side shows the actual execution video of PAR's predicted actions.
+  </div>
+</div>
+
+
+
+<div class="video-grid-container">
+  <div class="video-grid">
+      <!-- 第一列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PickCube_prediction_010.mp4" type="video/mp4">
+          </video>
+      </div>
+      
+      <!-- 第二列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PickCube_simulation_010.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  
+  <!-- 视频下方的统一说明文字 -->
+  <div class="video-description">
+    The visualization of <strong>PickCube</strong> task. Left side shows the video generation result from PAR's frame tokens. Right side shows the actual execution video of PAR's predicted actions.
+  </div>
+</div>
+
+
+<div class="video-grid-container">
+  <div class="video-grid">
+      <!-- 第一列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PickCube_prediction_011.mp4" type="video/mp4">
+          </video>
+      </div>
+      
+      <!-- 第二列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PickCube_simulation_011.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  
+  <!-- 视频下方的统一说明文字 -->
+  <div class="video-description">
+    The visualization of <strong>PickCube</strong> task. Left side shows the video generation result from PAR's frame tokens. Right side shows the actual execution video of PAR's predicted actions.
+  </div>
+</div>
+
+
+
+<div class="video-grid-container">
+  <div class="video-grid">
+      <!-- 第一列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PickCube_prediction_019.mp4" type="video/mp4">
+          </video>
+      </div>
+      
+      <!-- 第二列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PickCube_simulation_019.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  
+  <!-- 视频下方的统一说明文字 -->
+  <div class="video-description">
+    The visualization of <strong>PickCube</strong> task. Left side shows the video generation result from PAR's frame tokens. Right side shows the actual execution video of PAR's predicted actions.
+  </div>
+</div>
+
+
+
+<div class="video-grid-container">
+  <div class="video-grid">
+      <!-- 第一列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PickCube_prediction_020.mp4" type="video/mp4">
+          </video>
+      </div>
+      
+      <!-- 第二列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PickCube_simulation_020.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  
+  <!-- 视频下方的统一说明文字 -->
+  <div class="video-description">
+    The visualization of <strong>PickCube</strong> task. Left side shows the video generation result from PAR's frame tokens. Right side shows the actual execution video of PAR's predicted actions.
+  </div>
+</div>
+
+
+
+
+
+<div class="video-grid-container">
+  <div class="video-grid">
+      <!-- 第一列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PushCube_prediction_002.mp4" type="video/mp4">
+          </video>
+      </div>
+      
+      <!-- 第二列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PushCube_simulation_002.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  
+  <!-- 视频下方的统一说明文字 -->
+  <div class="video-description">
+    The visualization of <strong>PushCube</strong> task. Left side shows the video generation result from PAR's frame tokens. Right side shows the actual execution video of PAR's predicted actions.
+  </div>
+</div>
+
+
+<div class="video-grid-container">
+  <div class="video-grid">
+      <!-- 第一列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PushCube_prediction_006.mp4" type="video/mp4">
+          </video>
+      </div>
+      
+      <!-- 第二列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PushCube_simulation_006.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  
+  <!-- 视频下方的统一说明文字 -->
+  <div class="video-description">
+    The visualization of <strong>PushCube</strong> task. Left side shows the video generation result from PAR's frame tokens. Right side shows the actual execution video of PAR's predicted actions.
+  </div>
+</div>
+
+
+<div class="video-grid-container">
+  <div class="video-grid">
+      <!-- 第一列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PushCube_prediction_009.mp4" type="video/mp4">
+          </video>
+      </div>
+      
+      <!-- 第二列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PushCube_simulation_009.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  
+  <!-- 视频下方的统一说明文字 -->
+  <div class="video-description">
+    The visualization of <strong>PushCube</strong> task. Left side shows the video generation result from PAR's frame tokens. Right side shows the actual execution video of PAR's predicted actions.
+  </div>
+</div>
+
+
+<div class="video-grid-container">
+  <div class="video-grid">
+      <!-- 第一列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PushCube_prediction_016.mp4" type="video/mp4">
+          </video>
+      </div>
+      
+      <!-- 第二列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/PushCube_simulation_016.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  
+  <!-- 视频下方的统一说明文字 -->
+  <div class="video-description">
+    The visualization of <strong>PushCube</strong> task. Left side shows the video generation result from PAR's frame tokens. Right side shows the actual execution video of PAR's predicted actions.
+  </div>
+</div>
+
+
+<div class="video-grid-container">
+  <div class="video-grid">
+      <!-- 第一列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/StackCube_prediction_007.mp4" type="video/mp4">
+          </video>
+      </div>
+      
+      <!-- 第二列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/StackCube_simulation_007.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  
+  <!-- 视频下方的统一说明文字 -->
+  <div class="video-description">
+    The visualization of <strong>StackCube</strong> task. Left side shows the video generation result from PAR's frame tokens. Right side shows the actual execution video of PAR's predicted actions.
+  </div>
+</div>
+
+
+
+<div class="video-grid-container">
+  <div class="video-grid">
+      <!-- 第一列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/StackCube_prediction_012.mp4" type="video/mp4">
+          </video>
+      </div>
+      
+      <!-- 第二列视频 -->
+      <div class="video-container">
+          <video controls playsinline> <!-- 移除autoplay和loop属性 -->
+              <source src="static/videos/StackCube_simulation_012.mp4" type="video/mp4">
+          </video>
+      </div>
+  </div>
+  
+  <!-- 视频下方的统一说明文字 -->
+  <div class="video-description">
+    The visualization of <strong>StackCube</strong> task. Left side shows the video generation result from PAR's frame tokens. Right side shows the actual execution video of PAR's predicted actions.
+  </div>
+</div>
+
+ 
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{song2025physical,
+        title={Physical Autoregressive Model for Robotic Manipulation without Action Pretraining},
+        author={Song, Zijian and Qin, Sihan and Chen, Tianshui and Lin, Liang and Wang, Guangrun},
+        journal={arXiv preprint arXiv:2508.09822},
+        year={2025}
+      }</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
